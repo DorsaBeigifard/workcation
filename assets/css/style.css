@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+:root {
+  --bg: #e2e8f0;
+  --primary-color: #2d3748;
+  --dark-color: #1a202c;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-VariableFont_wdth\wght.ttf);
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.app__sidebar {
+  grid-row: 1/-1;
+  background-color: var(--primary-color);
+  display: none;
+}
+
+.app__header {
+  height: 8rem;
+}
+
+.app__main {
+  background-color: var(--bg);
+}
+
+@media screen and (min-width: 1024px) {
+  .app {
+    grid-template-columns: 20% 1fr;
+  }
+  .app__sidebar {
+    display: block;
+  }
+
+  .main__container {
+    padding: 4.5rem 10rem;
+  }
+}
